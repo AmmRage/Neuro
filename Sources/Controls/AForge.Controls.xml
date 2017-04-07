@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AForge.Controls</name>
+    </assembly>
+    <members>
+        <member name="T:AForge.Controls.Chart">
+            <summary>
+            Chart control
+            </summary>
+            
+            <remarks>The chart control allows to display multiple charts at time
+            of different types: dots, lines, connected dots.</remarks>
+            
+        </member>
+        <member name="T:AForge.Controls.Chart.SeriesType">
+            <summary>
+            Chart series type enumeration
+            </summary>
+        </member>
+        <member name="F:AForge.Controls.Chart.SeriesType.Line">
+            <summary>
+            Line style
+            </summary>
+        </member>
+        <member name="F:AForge.Controls.Chart.SeriesType.Dots">
+            <summary>
+            Dots style
+            </summary>
+        </member>
+        <member name="F:AForge.Controls.Chart.SeriesType.ConnectedDots">
+            <summary>
+            Connected dots style
+            </summary>
+        </member>
+        <member name="P:AForge.Controls.Chart.RangeX">
+            <summary>
+            Chart's X range
+            </summary>
+            
+            <remarks>The value sets the X's range of data to be displayed on the chart</remarks>
+            
+        </member>
+        <member name="P:AForge.Controls.Chart.RangeY">
+             <summary>
+             Chart's Y range
+             </summary>
+             
+             <remarks>The value sets the Y's range of data to be displayed on the chart</remarks>
+            
+        </member>
+        <member name="F:AForge.Controls.Chart.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:AForge.Controls.Chart.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AForge.Controls.Chart"/> class
+            </summary>
+        </member>
+        <member name="M:AForge.Controls.Chart.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:AForge.Controls.Chart.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:AForge.Controls.Chart.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Paint the control with all available data series
+            </summary>
+            
+            <param name="pe">Data for Paint event</param>
+            
+        </member>
+        <member name="M:AForge.Controls.Chart.AddDataSeries(System.String,System.Drawing.Color,AForge.Controls.Chart.SeriesType,System.Int32)">
+            <summary>
+            Add data series to the chart
+            </summary>
+            
+            <param name="name">Data series name</param>
+            <param name="color">Data series color</param>
+            <param name="type">Data series type</param>
+            <param name="width">Width (depends on the data series type, see remarks)</param>
+            
+            <remarks>Adds new empty data series to the collection of data series. To update this
+            series the <see cref="M:AForge.Controls.Chart.UpdateDataSeries(System.String,System.Double[0:,0:])"/> method should be used.<br /><br />
+            The meaning of the width parameter depends on the data series type:
+            <list type="bullet">
+            <item><b>Line</b> - width of the line;</item>
+            <item><b>Dots</b> - size of dots (rectangular dots with specified width and the same height);</item>
+            <item><b>Connected dots</b> - size of dots (dots are connected with one pixel width line).</item>
+            </list>
+            </remarks>
+            
+        </member>
+        <member name="M:AForge.Controls.Chart.AddDataSeries(System.String,System.Drawing.Color,AForge.Controls.Chart.SeriesType,System.Int32,System.Boolean)">
+            <summary>
+            Add data series to the chart
+            </summary>
+            
+            <param name="name">Data series name</param>
+            <param name="color">Data series color</param>
+            <param name="type">Data series type</param>
+            <param name="width">Width (depends on the data series type, see remarks)</param>
+            <param name="updateYRange">Specifies if <see cref="P:AForge.Controls.Chart.RangeY"/> should be updated</param>
+            
+            <remarks>Adds new empty data series to the collection of data series. The <b>updateYRange</b>
+            parameter specifies if the data series can affect displayable Y range.</remarks>
+            
+        </member>
+        <member name="M:AForge.Controls.Chart.UpdateDataSeries(System.String,System.Double[0:,0:])">
+            <summary>
+            Update data series on the chart
+            </summary>
+            
+            <param name="name">Data series name to update</param>
+            <param name="data">Data series values</param>
+            
+        </member>
+        <member name="M:AForge.Controls.Chart.RemoveDataSeries(System.String)">
+            <summary>
+            Remove data series from the chart
+            </summary>
+            
+            <param name="name">Data series name</param>
+            
+        </member>
+        <member name="M:AForge.Controls.Chart.RemoveAllDataSeries">
+            <summary>
+            Remove all data series from the chart
+            </summary>
+        </member>
+        <member name="M:AForge.Controls.Chart.UpdateYRange">
+            <summary>
+            displayable Y range
+            </summary>
+        </member>
+    </members>
+</doc>

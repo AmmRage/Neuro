@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AForge</name>
+    </assembly>
+    <members>
+        <member name="T:AForge.DoubleRange">
+            <summary>
+            Represents a double range with minimum and maximum values
+            </summary>
+        </member>
+        <member name="P:AForge.DoubleRange.Min">
+            <summary>
+            Minimum value
+            </summary>
+        </member>
+        <member name="P:AForge.DoubleRange.Max">
+            <summary>
+            Maximum value
+            </summary>
+        </member>
+        <member name="P:AForge.DoubleRange.Length">
+            <summary>
+            Length of the range (deffirence between maximum and minimum values)
+            </summary>
+        </member>
+        <member name="M:AForge.DoubleRange.#ctor(System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AForge.DoubleRange"/> class
+            </summary>
+            
+            <param name="min">Minimum value of the range</param>
+            <param name="max">Maximum value of the range</param>
+        </member>
+        <member name="M:AForge.DoubleRange.IsInside(System.Double)">
+            <summary>
+            Check if the specified value is inside this range
+            </summary>
+            
+            <param name="x">Value to check</param>
+            
+            <returns><b>True</b> if the specified value is inside this range or
+            <b>false</b> otherwise.</returns>
+            
+        </member>
+        <member name="M:AForge.DoubleRange.IsInside(AForge.DoubleRange)">
+            <summary>
+            Check if the specified range is inside this range
+            </summary>
+            
+            <param name="range">Range to check</param>
+            
+            <returns><b>True</b> if the specified range is inside this range or
+            <b>false</b> otherwise.</returns>
+            
+        </member>
+        <member name="M:AForge.DoubleRange.IsOverlapping(AForge.DoubleRange)">
+            <summary>
+            Check if the specified range overlaps with this range
+            </summary>
+            
+            <param name="range">Range to check for overlapping</param>
+            
+            <returns><b>True</b> if the specified range overlaps with this range or
+            <b>false</b> otherwise.</returns>
+            
+        </member>
+        <member name="T:AForge.IntRange">
+            <summary>
+            Represents an integer range with minimum and maximum values
+            </summary>
+        </member>
+        <member name="P:AForge.IntRange.Min">
+            <summary>
+            Minimum value
+            </summary>
+        </member>
+        <member name="P:AForge.IntRange.Max">
+            <summary>
+            Maximum value
+            </summary>
+        </member>
+        <member name="P:AForge.IntRange.Length">
+            <summary>
+            Length of the range (deffirence between maximum and minimum values)
+            </summary>
+        </member>
+        <member name="M:AForge.IntRange.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AForge.IntRange"/> class
+            </summary>
+            
+            <param name="min">Minimum value of the range</param>
+            <param name="max">Maximum value of the range</param>
+        </member>
+        <member name="M:AForge.IntRange.IsInside(System.Int32)">
+            <summary>
+            Check if the specified value is inside this range
+            </summary>
+            
+            <param name="x">Value to check</param>
+            
+            <returns><b>True</b> if the specified value is inside this range or
+            <b>false</b> otherwise.</returns>
+            
+        </member>
+        <member name="M:AForge.IntRange.IsInside(AForge.IntRange)">
+            <summary>
+            Check if the specified range is inside this range
+            </summary>
+            
+            <param name="range">Range to check</param>
+            
+            <returns><b>True</b> if the specified range is inside this range or
+            <b>false</b> otherwise.</returns>
+            
+        </member>
+        <member name="M:AForge.IntRange.IsOverlapping(AForge.IntRange)">
+            <summary>
+            Check if the specified range overlaps with this range
+            </summary>
+            
+            <param name="range">Range to check for overlapping</param>
+            
+            <returns><b>True</b> if the specified range overlaps with this range or
+            <b>false</b> otherwise.</returns>
+            
+        </member>
+        <member name="T:AForge.PolishExpression">
+            <summary>
+            Evaluator of expressions written in polish notation
+            </summary>
+            
+            <remarks>The class evaluates expressions writen in postfix polish notation.
+            The list of supported functuins is:
+            <list type="bullet">
+            <item><b>Arithmetic functions</b>: +, -, *, /;</item>
+            <item><b>sin</b> - sine;</item>
+            <item><b>cos</b> - cosine;</item>
+            <item><b>ln</b> - natural logarithm;</item>
+            <item><b>exp</b> - exponent;</item>
+            <item><b>sqrt</b> - square root.</item>
+            </list>
+            Arguments for these functions could be as usual constants, written as numbers, as variables,
+            writen as $&lt;var_number&gt; (<b>$2</b>, for example). The variable number is zero based index
+            of variables array.
+            </remarks>
+            
+            <example>The following sample illustrates the usage of <c>PolishExpression</c> class:
+            <code>
+            // expression written in polish notation
+            string expression = "2 $0 / 3 $1 * +";
+            // variables for the expression
+            double[] vars = new double[] { 3, 4 };
+            // expression evaluation
+            double result = PolishExpression.Evaluate( expression, vars );
+            </code>
+            </example>
+            
+        </member>
+        <member name="M:AForge.PolishExpression.#ctor">
+            <summary>
+            Constructor (the class should not be instantiated at this moment)
+            </summary>
+        </member>
+        <member name="M:AForge.PolishExpression.Evaluate(System.String,System.Double[])">
+             <summary>
+             Evaluates specified expression
+             </summary>
+            
+             <param name="expression">Expression written in postfix polish notation</param>
+             <param name="variables">Variables for the expression</param>
+             
+             <returns>Evaluated value of the expression</returns>
+            
+        </member>
+    </members>
+</doc>
